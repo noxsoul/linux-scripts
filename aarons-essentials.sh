@@ -23,6 +23,7 @@ sudo apt-get remove -y gnome-orca
 # get some needed packages installed
 sudo apt-get install -y build-essentials
 sudo apt-get install -y git
+sudo apt-get install -y git-flow
 sudo apt-get install -y meld
 sudo apt-get install -y chromium-browser
 
