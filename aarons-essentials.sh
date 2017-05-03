@@ -56,6 +56,8 @@ sudo dpkg -i gitkraken-amd64.deb
 # get nodejs
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
+# some packages for global installation
+sudo npm install -g yo
 
 # get .net core
 sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
