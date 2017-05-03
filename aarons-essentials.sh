@@ -62,3 +62,7 @@ sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotne
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
 sudo apt-get update
 sudo apt-get install -y dotnet-dev-1.0.3
+# install some spa templates
+dotnet new --install Microsoft.AspNetCore.SpaTemplates::*dotnet new --install Microsoft.AspNetCore.SpaTemplates::*
+# nowsee the list of templates installed
+dotnet new -all
