@@ -5,11 +5,20 @@
 
 # this was installed on XPS 13 9360
 # since my laptop has a small screen and QHD screen (hidpi)
-# fix hidpi by going to Preferences > General > User interface scaling from Normal to Double
+# fix hidpi by going to Preferences > General > User interface scaling from 
+# Normal to Double
 
 # update to latest
 sudo apt-get update
 sudo apt-get upgrade -y
+
+# remove hibernate
+sudo mv -v /etc/pokit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla /
+# refer to this link for other goodies:
+# https://sites.google.com/site/easylinuxtipsproject/mint-mate-first
+
+# remove unwanted apps
+sudo apt-get remove -y gnome-orca
 
 # get some needed packages installed
 sudo apt-get install -y build-essentials
@@ -52,18 +61,3 @@ sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotne
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
 sudo apt-get update
 sudo apt-get install -y dotnet-dev-1.0.3
-
-# get docker ce
-sudo apt-get -y install \
-  apt-transport-https \
-  ca-certificates \
-  curl
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository \
-       "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-       xenial \
-       stable"
-sudo apt-get update
-sudo apt-get -y install docker-ce
-# test docker installation
-sudo docker run hello-world
